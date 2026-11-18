@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reset password - FYP Portal</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"><link rel="stylesheet" href="css/style.css"></head>
+<body><div class="center"><form class="panel" id="f" novalidate style="text-align:left">
+<a class="logo" href="/" style="margin-bottom:18px"><i>F</i>FYP Portal</a>
+<h1 style="font-size:24px">Reset your password</h1><p class="mut" style="margin:6px 0 18px">Enter your email and we will send a reset link.</p>
+<div class="field"><label for="em">Email</label><input id="em" type="email" placeholder="name@rcet.edu.pk"><div class="err" id="err" role="alert"></div></div>
+<button class="btn" type="submit" style="width:100%">Send reset link</button>
+<p id="ok" class="mut" role="status" style="margin-top:14px"></p>
+<p style="margin-top:14px;text-align:center"><a href="login.html">Back to sign in</a></p>
+</form></div>
+<script>
+f.addEventListener('submit',e=>{e.preventDefault();err.textContent='';ok.textContent='';
+if(!/^\S+@\S+\.\S+$/.test(em.value)){err.textContent='Enter a valid email address.';em.setAttribute('aria-invalid','true');return}
+em.removeAttribute('aria-invalid');ok.textContent='If that email has an account, a reset link is on its way. Email sending is connected in a later step; for now contact the FYP office.'});
+</script><script src="js/a11y.js"></script></body></html>
